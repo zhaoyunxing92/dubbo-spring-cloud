@@ -1,0 +1,22 @@
+dubbo:
+  cloud:
+    registry-type: spring-cloud
+    subscribed-services: dubbo-spring-cloud-provider
+  scan:
+    base-packages: com.cloud.dubbo.service
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://127.0.0.1
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: dubbo-spring-cloud-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
